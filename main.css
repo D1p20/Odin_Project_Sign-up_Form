@@ -1,4 +1,10 @@
 /* custom logo font */
+
+:root {
+  --password-match: false;
+}
+
+
 @font-face {
     font-family: 'norseBold';
     src: url('Norse-Bold.otf') format('opentype');
@@ -49,6 +55,7 @@
   */
   #root, #__next {
     isolation: isolate;
+
   }
 
 
@@ -127,11 +134,13 @@ body{
   justify-content: center;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0em 1em;
+  padding: 1em 3em;
+
 }
 
 #intro >p{
   max-width: 750px;
+  margin-top: 1rem;
 }
 
 #frm{
@@ -139,10 +148,8 @@ body{
   padding: 0em 1em;
   background-color: #FFFFFF;
   box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.3);
-}
-
-.form_row{
-  position: relative;
+  padding: 1em 3em
+  
 }
 
 #frm div{
@@ -153,24 +160,91 @@ body{
 #frm h1{
   margin-bottom: 2rem;
 }
-#frm div label{
-  position: absolute;
 
-}
 
 #submit_from{
   height: 30%;
   background-color: #F9FAFB;
+  padding: 3rem;
   
 }
 
+
+/* form styles */
+.form_row{
+  max-width: 550px;
+  display: flex;
+  font-size: .8rem;
+}
+fieldset{
+  width: 50%;
+  border: none;
+}
+
+input{
+  width: 100%;
+  height:2rem;
+  box-sizing: border-box;
+  border: 1px solid #383737;
+  border-radius: 0.3rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+}
+
+
+input:focus {
+  border-color:blue;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color:red;
+  box-shadow: unset;
+}
+
+
+
+
+input[type="submit"]{
+  width: 250px;
+  height: unset;
+  padding: 1em 2em;
+  background-color: #596D48;
+  color: #F9FAFB;
+  font: 1em;
+  border: none;
+  border-radius: 1.5em;
+  margin: 2em 0;
+  transition-duration: 0.4s;
+}
+
+input[type="submit"]:hover{
+  color: white;
+  background-color:#78a74f;
+}
+
+input[type="submit"]:active { 
+  transform: translateY(4px);
+}
+
 /* Media Queries */
+@media screen and (max-width: 800px) {
+
+  html{
+    font-size: 10px;
+  }
+}
 @media screen and (max-width: 550px) {
 
+  html{
+    font-size: 8px;
+  }
 
  body{
   display: flex;
   flex-direction:column;
+  overflow:s;
 }
 
 #odin_logo_bg{
@@ -186,7 +260,31 @@ body{
   align-items: center;
 }
 #right{
-  
+  display: flex;
+  flex-direction:column;
   width: 100%;
+  height: 70%;
+}
+
+#intro{
+  width: 100%;
+  height: 25%;
+}
+#frm{
+  width: 100%;
+  height: 35%;
+}
+#submit_from{
+  width: 100%;
+  position: absolute;
+  bottom: 1%;
+  
+}
+
+input[type="submit"]{
+  width: 150px;
+  padding: .5em 1em;
+  font: 1em;
+  margin-bottom: 1.5em;
 }
 }
