@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css"></link>
+    <link rel="stylesheet" href="main.css">
     <title>Signup</title>
 </head>
 <body>
@@ -24,38 +24,48 @@
     <div id="frm">
         <h1>Let's do this!</h1>
         <form name="sign_up" action="#" method="post">
+            <div class="form_row">
+                <fieldset>
+                    <label for="firstname">FIRST NAME</label>
+                    <input id="firstname" type="text" value="" name="firstname" pattern="[a-zA-Z0-9]{2,}" minlength="2" required placeholder="Minimum 2 letters">
+                </fieldset>
+                <fieldset>
+                    <label for="lastname">LAST NAME</label>
+                    <input id="lastname" type="text" value="" name="lastname" pattern="[a-zA-Z0-9]{2,}" minlength="2"   required placeholder="Minimum 2 letters">
+                </fieldset>
+            </div>
+            <div class="form_row">
+                <fieldset>
+                    <label for="email">EMAIL</label>
+                    <input id="email" type="email" value="" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="email@example.com">
+ 
+                </fieldset>
+                <fieldset>
+                    <label for="phone">PHONE NUMBER</label>
+                    <input id="phone" type="number" value="" name="phone" pattern="^\(\d{3}\)\s*\d{3}-\d{4}$" required placeholder="(123) 456-7890">
+                </fieldset>
+            </div>
+
+            <div class="form_row">
+                <fieldset>
+                    <label for="pw">PASSWORD</label>
+                    <input id="pw" type="password">
+                </fieldset>
+                <fieldset>
+                    <label for="cpw">CONFIRM PASSWORD</label>
+                    <input id="cpw" type="password">
+                </fieldset>
+            </div>
             
-            <div class="form_row">
-                <label for="firstname">FIRST NAME</label>
-                <input id="firstname" type="text" value="" name="firstname">
-    
-                <label for="lastname">LAST NAME</label>
-                <input id="lastname" type="text" value="" name="lastname">
-            </div>
-
-            <div class="form_row">
-                <label for="email">EMAIL</label>
-                <input id="email" type="text" value="" name="email">
-    
-                <label for="phone">PHONE NUMBER</label>
-                <input id="phone" type="number" value="" name="phone">
-            </div>
-
-            <div class="form_row">
-                <label for="pw">PASSWORD</label>
-                <input id="pw" type="password">
-    
-                <label for="cpw">CONFIRM PASSWORD</label>
-                <input id="cpw" type="password">
+            <!-- Move the submit button inside the form -->
+            <div id="submit_form">
+                <input type="submit" value="CREATE ACCOUNT">
+                <p>Already have an account? <a href="#">Log in</a></p>
             </div>
         </form>
     </div>
-    <div id="submit_from">
-        <input type="reset" value="CREATE ACCOUNT">
-        <p>Already have an account? Log in</p>
-    </div>
    </div>
 
-    
+    <script defer src="main.js"></script>
 </body>
 </html>
