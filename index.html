@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Document</title>
+    <title>SignUp</title>
 </head>
 <body>
     <!-- left section with pic and logo stars here -->
     <div id="left">
         <div id="odin_logo_bg">
             <div id="odin_logo"></div>
-            <div id="odin_logo_text">ODIN</div>
+            <div id="odin_logo_text">ODIN</div>    
         </div>
-
+    <div id="photo_credit">
+        <p>Photo by 
+            <a href="https://unsplash.com/@haliewestphoto">Halie West</a> 
+            on 
+            <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">UpSplash</a>
+        </p>
+    </div>
     </div> <!-- left section with pic and logo ends here -->
 
 
@@ -56,15 +62,16 @@
                     <div class="form_row">
                         <fieldset>
                             <label for="pw">PASSWORD</label>
-                            <input type="password" id="pw" name="password" placeholder="4 to 8 characters" required pattern=".{4,8}" >
+                            <input type="password" id="pw" name="password" placeholder="4 to 8 characters" required pattern=".{4,8}" onkeyup='check();'>
                         </fieldset>
                         <fieldset>
                             <label for="cpw">CONFIRM PASSWORD</label>
-                            <input type="password" id="cpw" name="confirm_password" placeholder="Confirm password" required pattern=".{4,8}">
+                            <input type="password" id="cpw" name="confirm_password" placeholder="Confirm password" required pattern=".{4,8}"onkeyup='check();'>
                         </fieldset>
+                        
                     </div> <!-- password row -->
 
-
+                    <span id='message'></span>
         
 
                 </div> <!-- fields end here -->
